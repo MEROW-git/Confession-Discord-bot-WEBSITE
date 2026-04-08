@@ -1,0 +1,60 @@
+{
+  "site": {
+    "title": "Anonymous Confession Bot",
+    "base_url": "/",
+    "favicon": "/images/favicon.png",
+    "logo": "",
+    "logo_white": "",
+    "logo_width": "58",
+    "logo_height": "58",
+    "logo_text": "Anonymous Confession Bot"
+  },
+  "settings": {
+    "theme_switcher": true,
+    "default_theme": "system",
+    "pagination": 6,
+    "InnerPaginationOptions": {
+      "enableTop": false,
+      "enableBottom": true
+    },
+    "summary_length": 200,
+    "blog_folder": "posts"
+  },
+  "params": {
+    "tag_manager_id": "",
+    "footer_content": "A Discord bot for anonymous confessions with private admin review, clean approval flow, and simple server setup.",
+    "copyright": "Built for the [Anonymous Confession Bot](https://github.com/MEROW-git/Confession-Discord-bot)"
+  },
+  "metadata": {
+    "meta_author": "MEROW-git",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "Anonymous Confession Bot for Discord with moderation review and public posting workflow."
+  },
+  "widgets": {
+    "about": {
+      "enable": true,
+      "content": "Lorem ipsum dolor sit amet, conse tfctetur adipiscing elit. Vel in in donec iaculis tempasus odio nunc laoreet . Libero ullam rgscorper."
+    },
+    "featured_posts": {
+      "enable": true,
+      "title": "Blog Categories",
+      "showPost": 3
+    },
+    "categories": {
+      "enable": true,
+      "title": "Blog Categories"
+    },
+    "newsletter": {
+      "enable": true,
+      "title": "Newsletter",
+      "content": "Join thousands of Tiny Salt subscribers and get our best recipes delivered each week!",
+      "privacy_policy_page": "#",
+      "malichipm_url": ""
+    }
+  },
+  "disqus": {
+    "enable": true,
+    "shortname": "themefisher-template",
+    "settings": {}
+  }
+}
