@@ -13,7 +13,7 @@ import darkModeArtwork from "../logo/darkmode.png";
 import lightModeArtwork from "../logo/lightmode.png";
 
 const inviteUrl =
-  "https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&scope=bot%20applications.commands&permissions=268823632";
+  "https://discord.com/oauth2/authorize?client_id=1491465258924118146&scope=bot%20applications.commands&permissions=268823632";
 const githubUrl = "https://github.com/MEROW-git/Confession-Discord-bot";
 
 const features = [
