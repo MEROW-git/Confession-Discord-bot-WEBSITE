@@ -10,7 +10,8 @@ const ImageFallback = (props) => {
   const processedSrc = typeof normalizedSrc === "string" &&
     normalizedSrc.startsWith("/") &&
     !normalizedSrc.startsWith("//") &&
-    !normalizedSrc.startsWith("http")
+    !normalizedSrc.startsWith("http") &&
+    !normalizedSrc.startsWith(basePath)
     ? `${basePath}${normalizedSrc}`
     : normalizedSrc;
 
