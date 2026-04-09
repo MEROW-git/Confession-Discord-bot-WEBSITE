@@ -39,23 +39,6 @@ jobs:
           mkdir docs
           cp -a out/. docs/
 
-      - name: Create root redirect index.html
-        run: |
-          cat > docs/index.html <<'EOF'
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="refresh" content="0; url=/page/index.html" />
-    <link rel="canonical" href="/page/index.html" />
-    <title>Redirecting...</title>
-  </head>
-  <body>
-    <p>Redirecting to <a href="/page/index.html">/page/index.html</a>.</p>
-  </body>
-</html>
-EOF
-
       - name: Commit docs/ to main branch
         run: |
           git config user.name "github-actions[bot]"
