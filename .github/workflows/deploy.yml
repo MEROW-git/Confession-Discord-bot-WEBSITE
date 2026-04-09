@@ -5,6 +5,8 @@ on:
     branches:
       - main
       - master
+    paths-ignore:
+      - 'docs/**'
   workflow_dispatch:
 
 permissions:
@@ -16,6 +18,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -29,11 +33,20 @@ jobs:
       - name: Build and export site
         run: npm run export
 
-      - name: Deploy to gh-pages branch
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: ./out
-          user_name: github-actions[bot]
-          user_email: github-actions[bot]@users.noreply.github.com
+      - name: Publish static output to docs/
+        run: |
+          rm -rf docs
+          mkdir docs
+          cp -a out/. docs/
+
+      - name: Commit docs/ to main branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs
+          if git diff --cached --quiet; then
+            echo "No changes to docs/"
+          else
+            git commit -m "chore: update GitHub Pages docs [skip ci]"
+            git push origin HEAD:refs/heads/${GITHUB_REF_NAME}
+          fi
